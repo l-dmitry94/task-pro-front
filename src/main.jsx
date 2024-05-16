@@ -5,7 +5,7 @@ import App from 'components/App';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
     <React.StrictMode>
-        <BrowserRouter basename="/react_vite">
+        <BrowserRouter basename="/task-pro-front">
             <App />
         </BrowserRouter>
     </React.StrictMode>
