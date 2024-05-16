@@ -1,0 +1,22 @@
+@import 'reset';
+@import 'fonts';
+
+:root {
+    --ligth-green: #bedbb0;
+    --dark-green: #9dc888;
+    --white: #ffffff;
+    --dark-bg: #1f1f1f;
+    --light-bg: #f6f6f7;
+    --violet-bg: #ecedfd;
+    --dark-modal: #151515;
+    --light-modal: #fcfcfc;
+
+    --font-family: 'Poppins', sans-serif;
+}
+
+body {
+    font-family: var(--font-family);
+    font-size: 14px;
+    color: var(--white);
+    background-color: var(--dark-bg);
+}
