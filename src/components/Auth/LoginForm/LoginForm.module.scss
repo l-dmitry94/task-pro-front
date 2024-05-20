@@ -1,0 +1,53 @@
+.section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100dvh;
+    background: linear-gradient(to bottom, #f6f6f7, #e2e6e1, #bfdbb2);
+}
+
+.wrapper {
+    background-color: var(--dark-modal);
+    border-radius: 8px;
+    padding: 24px;
+}
+
+.controlList {
+    display: flex;
+    gap: 14px;
+    margin-bottom: 40px;
+}
+
+.controlLink {
+    font-weight: 500;
+    font-size: 18px;
+    letter-spacing: -0.02em;
+    color: rgba(255, 255, 255, 0.3);
+}
+
+.controlLink:global(.active) {
+    color: var(--white);
+}
+
+.inputWrapper {
+    position: relative;
+}
+
+.icon {
+    position: absolute;
+    top: 50%;
+    right: 15px;
+    transform: translateY(-50%);
+    width: 18px;
+    height: 18px;
+    fill: transparent;
+    stroke: rgba(255, 255, 255, 0.3);
+    cursor: pointer;
+}
+
+.formWrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    margin-bottom: 24px;
+}

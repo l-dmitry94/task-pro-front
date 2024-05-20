@@ -1,4 +1,5 @@
 import { Route, Routes } from 'react-router-dom';
+
 import WelcomePage from '../pages/WelcomePage';
 import AuthPage from '../pages/AuthPage';
 
