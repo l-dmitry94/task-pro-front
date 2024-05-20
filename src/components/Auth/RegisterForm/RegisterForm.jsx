@@ -7,6 +7,7 @@ import CustomForm from 'components/CustomForm';
 import CustomInput from 'components/CustomInput';
 
 import scss from './RegisterForm.module.scss';
+import { signup } from '../../../redux/auth/auth-operations';
 
 const RegisterForm = () => {
     const [isShowPassword, setIsShowPassword] = useState(false);
@@ -56,6 +57,7 @@ const RegisterForm = () => {
                     <CustomForm
                         defaultValues={defaultValues}
                         schema={validationSchema}
+                        operation={signup}
                         buttonText="Register Now"
                     >
                         {({ register, errors }) => (
