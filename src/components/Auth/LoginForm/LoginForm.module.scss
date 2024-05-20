@@ -1,3 +1,5 @@
+@import "src/styles/mixins";
+
 .section {
     display: flex;
     align-items: center;
@@ -10,6 +12,12 @@
     background-color: var(--dark-modal);
     border-radius: 8px;
     padding: 24px;
+
+    @include media-rules(tablet) {
+        max-width: 424px;
+        padding: 40px;
+        margin: 0 auto;
+    }
 }
 
 .controlList {

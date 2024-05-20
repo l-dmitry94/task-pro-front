@@ -63,7 +63,7 @@
     letter-spacing: -0.02em;
     text-align: center;
     color: var(--auth-dark);
-    margin-bottom: 48px;
+    margin: 0 auto 48px;
 
     @include media-rules(tablet) {
         max-width: 473px;
