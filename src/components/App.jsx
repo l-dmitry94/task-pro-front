@@ -4,22 +4,34 @@ import 'react-toastify/dist/ReactToastify.css';
 
 import WelcomePage from '../pages/WelcomePage';
 import AuthPage from '../pages/AuthPage';
+import { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
+import { current } from '../redux/auth/auth-operations';
+import PublicRoute from './PublicRoute';
+import PrivateRoute from './PrivateRoute';
+import HomePage from 'pages/HomePage';
 
 const App = () => {
+    const dispatch = useDispatch();
+
+    useEffect(() => {
+        dispatch(current());
+    }, [dispatch]);
+
     return (
         <>
             <Routes>
-                <Route path="/welcome" element={<WelcomePage />} />
-                <Route path="/auth/:id" element={<AuthPage />} />
+                <Route element={<PublicRoute />}>
+                    <Route path="/welcome" element={<WelcomePage />} />
+                    <Route path="/auth/:id" element={<AuthPage />} />
+                </Route>
+
+                <Route element={<PrivateRoute />}>
+                    <Route path="/home" element={<HomePage />} />
+                </Route>
             </Routes>
 
-            <ToastContainer
-                autoClose={1000}
-                closeOnClick
-                theme="colored"
-                hideProgressBar
-                limit={1}
-            />
+            <ToastContainer theme="colored" hideProgressBar />
         </>
     );
 };

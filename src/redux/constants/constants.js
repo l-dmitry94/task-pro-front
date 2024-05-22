@@ -1,9 +1,17 @@
+import { toast } from 'react-toastify';
+
 export const pending = (state) => {
-    state.isLoading = true;
-    state.error = null;
+    state.toastId = toast.loading('Please wait...');
 };
 
 export const rejected = (state, action) => {
-    state.isLoading = false;
-    state.error = action.payload;
+    if (state.toastId) {
+        toast.update(state.toastId, {
+            render: action.payload,
+            type: 'error',
+            isLoading: false,
+            autoClose: 2000,
+            closeOnClick: true,
+        });
+    }
 };

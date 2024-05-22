@@ -7,6 +7,7 @@ import CustomForm from 'components/CustomForm';
 import CustomInput from 'components/CustomInput';
 
 import scss from './LoginForm.module.scss';
+import { signin } from '../../../redux/auth/auth-operations';
 
 const LoginForm = () => {
     const [isShowPassword, setIsShowPassword] = useState(false);
@@ -54,6 +55,7 @@ const LoginForm = () => {
                     <CustomForm
                         defaultValues={defaultValues}
                         schema={validationSchema}
+                        operation={signin}
                         buttonText="Log In Now"
                     >
                         {({ register, errors }) => (

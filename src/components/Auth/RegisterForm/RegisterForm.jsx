@@ -1,7 +1,6 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import * as yup from 'yup';
-import { toast } from 'react-toastify';
 
 import Container from 'components/Container';
 import CustomForm from 'components/CustomForm';
@@ -9,11 +8,9 @@ import CustomInput from 'components/CustomInput';
 
 import scss from './RegisterForm.module.scss';
 import { signup } from '../../../redux/auth/auth-operations';
-import { useAuth } from '../../../hooks/useAuth';
 
 const RegisterForm = () => {
     const [isShowPassword, setIsShowPassword] = useState(false);
-    const { error } = useAuth();
 
     const defaultValues = {
         name: '',
@@ -35,12 +32,6 @@ const RegisterForm = () => {
             ),
     });
 
-    useEffect(() => {
-        if (error) {
-            toast.dismiss();
-            toast.error(error);
-        }
-    }, [error]);
     return (
         <section className={scss.section}>
             <Container>
