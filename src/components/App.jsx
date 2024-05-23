@@ -28,16 +28,16 @@ const App = () => {
                 <>
                     <Routes>
                         <Route element={<PublicRoute />}>
-                            {/* <Route
+                            <Route
                                 path="/"
                                 element={<Navigate to="/welcome" />}
-                            /> */}
+                            />
                             <Route path="/welcome" element={<WelcomePage />} />
                             <Route path="/auth/:id" element={<AuthPage />} />
                         </Route>
 
                         <Route element={<PrivateRoute />}>
-                            {/* <Route path="/" element={<Navigate to="/home" />} /> */}
+                            <Route path="/" element={<Navigate to="/home" />} />
                             <Route path="/home" element={<HomePage />} />
                             <Route
                                 path="/home/:boardName"
