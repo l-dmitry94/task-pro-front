@@ -12,5 +12,5 @@ export default defineConfig({
             assets: '/src/assets',
         },
     },
-    base: '/task-pro-front/',
+    base: '/task-pro-front',
 });
