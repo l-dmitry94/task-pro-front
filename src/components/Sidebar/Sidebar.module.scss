@@ -1,0 +1,15 @@
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    max-width: 225px;
+    width: 100%;
+    height: 100dvh;
+    background-color: var(--sidebar-dark);
+    padding: 14px 0 24px;
+}
+
+.container {
+    max-width: 197px;
+    margin: 0 auto;
+}

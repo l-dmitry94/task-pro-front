@@ -9,6 +9,7 @@ const initialState = {
     isLogin: false,
     toastId: null,
     error: null,
+    isRefreshing: false,
 };
 
 const authSlice = createSlice({
@@ -38,6 +39,7 @@ const authSlice = createSlice({
                 state.user = action.payload.user;
                 state.token = action.payload.token;
                 state.isLogin = true;
+
                 if (state.toastId) {
                     toast.update(state.toastId, {
                         render: 'Signin successful',
@@ -51,14 +53,15 @@ const authSlice = createSlice({
             .addCase(signin.rejected, rejected)
 
             .addCase(current.pending, (state) => {
-                state.error = null;
+                state.isRefreshing = true;
             })
             .addCase(current.fulfilled, (state, action) => {
                 state.user = action.payload.user;
                 state.isLogin = true;
+                state.isRefreshing = false;
             })
-            .addCase(current.rejected, (state, action) => {
-                state.error = action.payload;
+            .addCase(current.rejected, (state) => {
+                state.isRefreshing = false;
             })
 
             .addCase(logout.pending, pending)
@@ -66,6 +69,16 @@ const authSlice = createSlice({
                 state.isLogin = false;
                 state.user = {};
                 state.token = '';
+
+                if (state.toastId) {
+                    toast.update(state.toastId, {
+                        render: 'Logout successful',
+                        type: 'success',
+                        isLoading: false,
+                        autoClose: 2000,
+                        closeOnClick: true,
+                    });
+                }
             })
             .addCase(logout.rejected, rejected);
     },

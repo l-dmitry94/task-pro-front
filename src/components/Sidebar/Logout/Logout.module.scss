@@ -1,0 +1,24 @@
+@import 'src/styles/mixins';
+
+.button {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    font-weight: 500;
+    color: inherit;
+    @include transition(color);
+
+    &:is(:hover, :focus) {
+        color: var(--dark-green);
+
+        & .icon {
+            stroke: var(--dark-green);
+        }
+    }
+}
+
+.icon {
+    fill: transparent;
+    stroke: var(--light-green);
+    @include transition(stroke);
+}

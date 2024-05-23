@@ -1,0 +1,25 @@
+.link {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 600;
+    font-size: 16px;
+    letter-spacing: -0.04em;
+    margin-bottom: 70px;
+}
+
+.wrapperIcon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    background-color: var(--dark-bg);
+    border-radius: 8px;
+}
+
+.icon {
+    width: 12px;
+    height: 16px;
+    fill: var(--white);
+}
