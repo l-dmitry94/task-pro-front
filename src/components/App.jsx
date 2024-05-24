@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { Navigate, Route, Routes } from 'react-router-dom';
+import { Navigate, Route, Routes, useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -16,11 +16,20 @@ import { current } from '../redux/auth/auth-operations';
 
 const App = () => {
     const dispatch = useDispatch();
-    const { isRefreshing } = useAuth();
+    const navigate = useNavigate();
+    const { isRefreshing, error } = useAuth();
+
+    console.log(error);
 
     useEffect(() => {
         dispatch(current());
     }, [dispatch]);
+
+    useEffect(() => {
+        if (error === 'jwt expired') {
+            navigate('/welcome');
+        }
+    }, [error, navigate]);
 
     return (
         <>
