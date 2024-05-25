@@ -1,6 +1,7 @@
+import { Outlet } from 'react-router-dom';
+
 import Sidebar from 'components/Sidebar';
 import Header from 'components/Header';
-import ScreensPage from 'pages/ScreensPage';
 
 import scss from './Home.module.scss';
 
@@ -12,7 +13,7 @@ const Home = () => {
             <div>
                 <Header />
                 <main>
-                    <ScreensPage />
+                    <Outlet />
                 </main>
             </div>
         </section>

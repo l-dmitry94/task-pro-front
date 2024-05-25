@@ -1,0 +1,66 @@
+.link {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 18px 20px 14px;
+
+    &:global(.active) {
+        background-color: rgba(31, 31, 31, 0.4);
+
+        & .controlList {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        &::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 4px;
+            height: 100%;
+            background-color: var(--light-green);
+            border-radius: 4px 0 0 4px;
+        }
+    }
+}
+
+.info {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.infoIcon {
+    width: 18px;
+    height: 18px;
+    fill: transparent;
+    stroke: var(--white);
+}
+
+.title {
+    font-weight: 500;
+    letter-spacing: -0.02em;
+    width: 120px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.controlList {
+    display: none;
+}
+
+.controlButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.controlIcon {
+    width: 16px;
+    height: 16px;
+    fill: transparent;
+    stroke: rgba(255, 255, 255, 0.5);
+}

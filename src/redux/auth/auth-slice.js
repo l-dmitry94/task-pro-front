@@ -65,6 +65,7 @@ const authSlice = createSlice({
                 state.error = action.payload;
                 state.isLogin = false;
                 state.token = '';
+                state.error = null;
             })
 
             .addCase(logout.pending, pending)

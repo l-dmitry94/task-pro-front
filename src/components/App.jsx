@@ -19,8 +19,6 @@ const App = () => {
     const navigate = useNavigate();
     const { isRefreshing, error } = useAuth();
 
-    console.log(error);
-
     useEffect(() => {
         dispatch(current());
     }, [dispatch]);
@@ -47,11 +45,12 @@ const App = () => {
 
                         <Route element={<PrivateRoute />}>
                             <Route path="/" element={<Navigate to="/home" />} />
-                            <Route path="/home" element={<HomePage />} />
-                            <Route
-                                path="/home/:boardName"
-                                element={<ScreensPage />}
-                            />
+                            <Route path="/home" element={<HomePage />}>
+                                <Route
+                                    path="/home/:boardName"
+                                    element={<ScreensPage />}
+                                />
+                            </Route>
                         </Route>
                     </Routes>
 
