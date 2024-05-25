@@ -1,7 +1,9 @@
 import { useEffect, useMemo } from 'react';
-import BoardItem from './BoardItem';
-import scss from './Boards.module.scss';
 import { useNavigate } from 'react-router-dom';
+
+import BoardItem from './BoardItem';
+
+import scss from './Boards.module.scss';
 
 const Boards = () => {
     const navigate = useNavigate();

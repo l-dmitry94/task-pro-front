@@ -1,6 +1,8 @@
 import { NavLink } from 'react-router-dom';
-import scss from './BoardItem.module.scss';
+
 import { icons } from 'assets/icons';
+
+import scss from './BoardItem.module.scss';
 
 const BoardItem = ({ icon, title }) => {
     const addToLocalStorage = () => {

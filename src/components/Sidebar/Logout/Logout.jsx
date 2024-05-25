@@ -1,13 +1,16 @@
-import { icons } from 'assets/icons';
-import scss from './Logout.module.scss';
 import { useDispatch } from 'react-redux';
+
+import { icons } from 'assets/icons';
 import { logout } from '../../../redux/auth/auth-operations';
+
+import scss from './Logout.module.scss';
 
 const Logout = () => {
     const dispatch = useDispatch();
 
     const handleLogout = () => {
         dispatch(logout());
+
         localStorage.removeItem('ACTIVE_BOARD');
     };
 
