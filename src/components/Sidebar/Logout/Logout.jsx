@@ -8,6 +8,7 @@ const Logout = () => {
 
     const handleLogout = () => {
         dispatch(logout());
+        localStorage.removeItem('ACTIVE_BOARD');
     };
 
     return (
