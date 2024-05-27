@@ -15,6 +15,10 @@
             stroke: var(--dark-green);
         }
     }
+
+    @include media-rules(desktop) {
+        font-size: 16px;
+    }
 }
 
 .icon {

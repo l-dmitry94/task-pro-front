@@ -1,3 +1,5 @@
+@import "src/styles/mixins";
+
 .link {
     display: flex;
     align-items: center;
@@ -6,6 +8,10 @@
     font-size: 16px;
     letter-spacing: -0.04em;
     margin-bottom: 70px;
+
+    @include media-rules(tablet) {
+        margin-bottom: 60px;
+    }
 }
 
 .wrapperIcon {

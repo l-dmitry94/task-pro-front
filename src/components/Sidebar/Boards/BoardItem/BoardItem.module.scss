@@ -13,6 +13,14 @@
             gap: 8px;
         }
 
+        & .infoIcon {
+            stroke: var(--white);
+        }
+
+        & .title {
+            color: var(--white);
+        }
+
         &::after {
             content: '';
             position: absolute;
@@ -36,7 +44,7 @@
     width: 18px;
     height: 18px;
     fill: transparent;
-    stroke: var(--white);
+    stroke: rgba(255, 255, 255, 0.5);
 }
 
 .title {
@@ -46,6 +54,7 @@
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+    color: rgba(255, 255, 255, 0.5);
 }
 
 .controlList {

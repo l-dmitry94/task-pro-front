@@ -25,8 +25,12 @@ const Boards = () => {
     useEffect(() => {
         const LSBoards = localStorage.getItem('ACTIVE_BOARD');
 
-        if (!LSBoards) {
+        if (boards && !LSBoards) {
             navigate(`/home/${boards[0].title}`);
+        }
+
+        if (LSBoards) {
+            navigate(`/home/${LSBoards}`);
         }
     }, [boards, navigate]);
 

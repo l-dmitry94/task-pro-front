@@ -1,0 +1,38 @@
+@import "src/styles/mixins";
+
+.select {
+    & .selectControl {
+        gap: 4px;
+        cursor: pointer;
+    }
+
+    & .selectPlaceholder {
+        font-weight: 500;
+        letter-spacing: -0.02em;
+        color: rgba(255, 255, 255, 0.8);
+    }
+
+    & .selectDropdownIndicator svg {
+        width: 16px;
+        height: 16px;
+        fill: rgba(255, 255, 255, 0.8);
+        stroke: rgba(255, 255, 255, 0.8);
+    }
+
+    & .selectMenu {
+        width: auto;
+        right: 0;
+        transition: all .3s linear;
+    }
+
+    & .selectMenuList {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+        background-color: var(--auth-dark);
+        border: 1px solid var(--light-green);
+        border-radius: 8px;
+        box-shadow: 0 4px 16px 0 rgba(17, 17, 17, 0.1);
+        padding: 18px 44px 18px 18px;
+    }
+}

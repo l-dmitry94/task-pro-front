@@ -1,0 +1,20 @@
+.header {
+    background-color: var(--auth-dark);
+    padding: 14px 0;
+}
+
+.wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.burgerIcon {
+    stroke: var(--white);
+}
+
+.main {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}

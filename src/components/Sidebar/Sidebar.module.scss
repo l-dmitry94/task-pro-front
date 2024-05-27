@@ -1,4 +1,9 @@
+@import "src/styles/mixins";
+
 .sidebar {
+    position: fixed;
+    left: 0;
+    top: 0;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -6,7 +11,12 @@
     width: 100%;
     height: 100dvh;
     background-color: var(--sidebar-dark);
+    // transform: translateX(-100%);
     padding: 14px 0 24px;
+
+    @include media-rules(tablet) {
+        max-width: 260px;
+    }
 }
 
 .container {
