@@ -1,6 +1,7 @@
 @import "src/styles/mixins";
 
 .select {
+    position: relative;
     & .selectControl {
         gap: 4px;
         cursor: pointer;

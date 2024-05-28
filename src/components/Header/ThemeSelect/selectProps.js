@@ -9,7 +9,12 @@ const getClassNames = () => ({
     menuList: () => scss.selectMenuList,
 });
 
-const getProps = (options, selectedOption, setSelectedOption) => ({
+const getProps = (
+    options,
+    selectedOption,
+    setSelectedOption,
+    isSidebarOpen
+) => ({
     classNamePrefix: 'react-select',
     classNames: getClassNames(),
     className: scss.select,
@@ -19,6 +24,7 @@ const getProps = (options, selectedOption, setSelectedOption) => ({
     placeholder: 'Theme',
     isSearchable: false,
     unstyled: true,
+    isDisabled: isSidebarOpen ? true : false,
     styles: {
         option: (provided, state) => ({
             ...provided,

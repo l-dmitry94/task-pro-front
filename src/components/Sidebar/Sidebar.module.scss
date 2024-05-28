@@ -1,22 +1,36 @@
-@import "src/styles/mixins";
+@import 'src/styles/mixins';
 
 .sidebar {
     position: fixed;
+    width: 100vw;
+    height: 100vh;
     left: 0;
     top: 0;
+    transform: translateX(calc(-100% - 225px));
+    @include transition(transform);
+}
+
+.overlay {
+    position: absolute;
+    left: 225px;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(21, 21, 21, 0.5);
+}
+
+.sidebarContent {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     max-width: 225px;
-    width: 100%;
-    height: 100dvh;
+    width: 225px;
+    height: 100%;
     background-color: var(--sidebar-dark);
-    // transform: translateX(-100%);
     padding: 14px 0 24px;
+}
 
-    @include media-rules(tablet) {
-        max-width: 260px;
-    }
+.active {
+    transform: translateX(0);
 }
 
 .container {

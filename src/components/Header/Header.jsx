@@ -6,7 +6,7 @@ import { icons } from 'assets/icons';
 
 import scss from './Header.module.scss';
 
-const Header = ({ toggleSidebar }) => {
+const Header = ({ isSidebarOpen, toggleSidebar }) => {
     return (
         <header className={scss.header}>
             <Container>
@@ -18,7 +18,7 @@ const Header = ({ toggleSidebar }) => {
                     </button>
 
                     <div className={scss.main}>
-                        <ThemeSelect />
+                        <ThemeSelect isSidebarOpen={isSidebarOpen} />
                         <Profile />
                     </div>
                 </div>
